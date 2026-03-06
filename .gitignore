@@ -2,5 +2,16 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
 .RDatatmp
-Hackathon
+.Rapp.history
+Hackathon/
+*.fa
+*.rds
+*.biom
+*.sum
+*.fasta
+*.tsv
+*.csv
+*.qza
+*.html
