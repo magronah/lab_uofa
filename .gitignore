@@ -2,3 +2,12 @@
 .Rhistory
 .RData
 .Ruserdata
+.DS_Store
+*.fa
+*.rds
+*.biom
+*.sum
+*.fasta
+*.tsv
+*.csv
+*.qza
