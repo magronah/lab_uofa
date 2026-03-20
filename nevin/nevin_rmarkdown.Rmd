@@ -1,0 +1,67 @@
+---
+title: "nevin_rmarkdown"
+output: html_document
+date: "2025-11-07"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Abstract
+
+- Background
+  - There are a lot of methods used to identify/differentiate microbes
+- The problem and method used to solve the research question
+  - Unclear which tools are appropriately used for these studies
+  - Tried 14 different testing methods on 38 16S rRNA gene datasets with 2 sample groups
+  - 
+
+- Finding
+  - Different testing methods produced different 
+  - Number of features identified correlate with aspects of the data
+##
+
+## next meeting
+## go through paper and discuss it
+## will write out some questions for us
+## each student will get some dataset, using this this dataset, estimate some parameters
+## ob_ross, datasets for those who are obese
+
+## go into paper and find where the ob data is coming from (from ross)
+
+## find the paper where this data came from
+## whatever dataset you are assigned to, read it and summarize it (ob_ross was an example)
+## your name, research paper name, author, dataset (ob_ross), reference link
+## filter out taxa that are too small when loading dataset (use metadata file)
+## actual data is in ASV table
+
+## have microbiome data and people matrix
+## can find the mean for each taxa
+## plot the taxa on a graph
+## given the dataset, find the models that best fit the data
+## fitting a MIXTURE of normal distributions (MIXTURE GAUSSIAN DISTRIBUTION)
+
+## logmean takes the log of all of the averages
+## don't know how many gaussian distributions
+## try 1, 2, 3, 4... up to max.comp + 1 distributions
+## output is # of gaussian distributions
+## in example, created a normal distribution with 100 values and sd = 1
+## logmean = c(rnorm(n=100, mean=0, sd=1), rnorm(n=100,mean=12, sd=7)) creates 2 normal distributions combined with respective parameters
+## lambda tells the proportion to assign to each distribution (% of data that falls under each Gaussian)
+
+## metadata tells information about the samples
+
+
+# black dotted lines: distribution for certain dataset
+# generate a model that closely models that distribution, even without the data, generate datasets based on those parameters, microbiome data
+# red curve is the dataset that the model set generated, comparing with actual dataset
+# =======================================================================================
+# Reading academic papers
+# =======================================================================================
+# logmean count and logfoldchange
+# for logmean count, use parameter estimations (mu and sd)
+# written my as
+# logfoldchange, the mean and standard deviation are functions of linear and quadratic functions
+# logfoldchange, would then estimate the parameters for these linear and quadratics functions
+# when plugging in a single taxa after

@@ -3,6 +3,9 @@
 .RData
 .Ruserdata
 .DS_Store
+.RDatatmp
+.Rapp.history
+Hackathon/
 *.fa
 *.rds
 *.biom
