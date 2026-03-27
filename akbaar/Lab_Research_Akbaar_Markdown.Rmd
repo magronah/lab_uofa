@@ -1,0 +1,24 @@
+---
+title: "Lab_Research Markdown"
+output: html_document
+date: "2025-11-07"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Abstract 
+  
+- Background 
+  - Their is alot of diffrent ways to find microbiome's 
+- The Problem 
+  - They compared 14 different statistical tools on 38 microbiome datasets to see which methods gave the most consistent and reliable results.
+  
+- Finding 
+  - The study found that different analysis tools gave very different results, with ALDEx2 and ANCOM-II being the most consistent and reliable, while others like edgeR and LEfSe often produced false positives
+  
+  
+  
+  
+
