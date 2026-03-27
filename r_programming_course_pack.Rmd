@@ -1,0 +1,647 @@
+---
+title: "R Programming Course Pack"
+author: " "
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+---
+
+# Course Overview
+
+This course introduces students to **R programming** from first principles and builds toward **intermediate data analysis and visualization skills**.
+
+**Audience:** First-year university students with mixed prior experience  
+**Duration:** 10--12 weeks  
+**Format:** Weekly lecture + lab + assignment
+
+# Learning Outcomes
+
+By the end of this course, students should be able to:
+
+- Use R and RStudio confidently
+- Create and manipulate variables, vectors, and data frames
+- Import, explore, and clean datasets
+- Write simple programs using conditionals, loops, and functions
+- Use `dplyr` for data wrangling
+- Create plots using `ggplot2`
+- Carry out basic statistical modelling in R
+- Prepare a simple reproducible report in R Markdown
+
+# How to Use This Course Pack
+
+Each week includes:
+
+- Learning objectives
+- Lecture notes
+- Live coding examples
+- Practice exercises
+- Assignment ideas
+
+# Week 1: Introduction to R and RStudio
+
+## Objectives
+
+- Understand what R is used for
+- Become familiar with the RStudio interface
+- Run basic commands
+- Create and use variables
+
+## Lecture Notes
+
+R is a programming language widely used for statistics, data analysis, and visualization.  
+RStudio is an integrated development environment that makes it easier to write and run R code.
+
+Students should learn:
+- Console vs script
+- Environment
+- Plots pane
+- Files pane
+
+## Live Coding Examples
+
+```{r}
+# Basic arithmetic
+2 + 3
+10 - 4
+5 * 6
+12 / 3
+
+# Assigning variables
+x <- 10
+y <- 5
+
+x + y
+x * y
+```
+
+## Practice Exercises
+
+1. Create a variable `a` equal to 7.
+2. Create a variable `b` equal to 3.
+3. Compute:
+   - `a + b`
+   - `a - b`
+   - `a * b`
+   - `a / b`
+
+## Assignment
+
+Write a short R script that calculates the total cost of 3 items and then adds tax.
+
+# Week 2: Data Types and Vectors
+
+## Objectives
+
+- Understand common R data types
+- Create vectors
+- Use basic summary functions
+
+## Lecture Notes
+
+Common data types in R include:
+- numeric
+- character
+- logical
+
+A vector is a collection of values of the same type.
+
+## Live Coding Examples
+
+```{r}
+# Data types
+num <- 10
+word <- "Hello"
+flag <- TRUE
+
+class(num)
+class(word)
+class(flag)
+
+# Vectors
+scores <- c(80, 90, 75, 88)
+
+mean(scores)
+sum(scores)
+length(scores)
+max(scores)
+min(scores)
+```
+
+## Practice Exercises
+
+1. Create a numeric vector with 5 values.
+2. Find its mean.
+3. Find its maximum and minimum.
+4. Create a character vector with the names of 4 students.
+
+## Assignment
+
+Store 10 student scores in a vector and compute the mean, median, minimum, and maximum.
+
+# Week 3: Data Frames and Importing Data
+
+## Objectives
+
+- Understand tabular data in R
+- Create a data frame
+- Import a CSV file
+- Explore a dataset
+
+## Lecture Notes
+
+A data frame stores data in rows and columns.  
+Each column can represent a variable, and each row can represent an observation.
+
+Useful exploration functions:
+- `head()`
+- `str()`
+- `summary()`
+- `names()`
+
+## Live Coding Examples
+
+```{r}
+students <- data.frame(
+  name = c("Alice", "Bob", "Chidi", "Dana"),
+  age = c(18, 19, 18, 20),
+  score = c(85, 90, 78, 92)
+)
+
+head(students)
+str(students)
+summary(students)
+names(students)
+```
+
+```{r eval=FALSE}
+# Importing a CSV file
+df <- read.csv("data.csv")
+head(df)
+```
+
+## Practice Exercises
+
+1. Create a data frame with 3 columns and 5 rows.
+2. Display its structure.
+3. Show the first few rows.
+4. Find the names of the columns.
+
+## Assignment
+
+Import a CSV file into R and write 5 observations about the dataset.
+
+# Week 4: Subsetting and Filtering Data
+
+## Objectives
+
+- Extract rows and columns
+- Filter data using logical conditions
+- Access variables in a data frame
+
+## Lecture Notes
+
+Subsetting allows students to isolate the data they need.
+
+Examples:
+- Select rows
+- Select columns
+- Filter based on a condition
+
+## Live Coding Examples
+
+```{r}
+students
+students$score
+students[, c("name", "score")]
+students[students$score > 80, ]
+students[students$age == 18, ]
+```
+
+## Practice Exercises
+
+1. Select only the `name` column.
+2. Select rows where score is above 85.
+3. Select rows where age is 18.
+4. Select only the `name` and `age` columns.
+
+## Assignment
+
+Using a small student dataset, identify all students who passed and all students who scored above 90.
+
+# Week 5: Control Flow
+
+## Objectives
+
+- Use `if`, `else if`, and `else`
+- Understand the role of logical conditions
+- Introduce loops
+
+## Lecture Notes
+
+Control flow allows code to make decisions.
+
+## Live Coding Examples
+
+```{r}
+score <- 75
+
+if (score >= 50) {
+  print("Pass")
+} else {
+  print("Fail")
+}
+```
+
+```{r}
+score <- 85
+
+if (score >= 80) {
+  print("A")
+} else if (score >= 70) {
+  print("B")
+} else if (score >= 60) {
+  print("C")
+} else {
+  print("Needs Improvement")
+}
+```
+
+```{r}
+for (i in 1:5) {
+  print(i)
+}
+```
+
+## Practice Exercises
+
+1. Write code that prints `"Even"` if a number is even and `"Odd"` otherwise.
+2. Write a loop that prints the numbers from 1 to 10.
+3. Write code that assigns a letter grade based on a score.
+
+## Assignment
+
+Write a grading program that takes a score and returns a category such as A, B, C, D, or F.
+
+# Week 6: Writing Functions
+
+## Objectives
+
+- Understand why functions are useful
+- Write simple custom functions
+- Use inputs and outputs
+
+## Lecture Notes
+
+Functions help avoid repetition and make code more organized.
+
+## Live Coding Examples
+
+```{r}
+grade_fun <- function(score) {
+  if (score >= 50) {
+    return("Pass")
+  } else {
+    return("Fail")
+  }
+}
+
+grade_fun(70)
+grade_fun(42)
+```
+
+```{r}
+add_two_numbers <- function(x, y) {
+  x + y
+}
+
+add_two_numbers(3, 5)
+```
+
+## Practice Exercises
+
+1. Write a function that doubles a number.
+2. Write a function that calculates the area of a rectangle.
+3. Write a function that classifies a score as pass or fail.
+
+## Assignment
+
+Create at least 3 useful functions and test them with multiple inputs.
+
+# Week 7: Data Wrangling with dplyr
+
+## Objectives
+
+- Use `filter()`, `select()`, `mutate()`, and `arrange()`
+- Understand the pipe operator `%>%`
+- Begin modern data wrangling workflows
+
+## Lecture Notes
+
+The `dplyr` package makes data manipulation easier and more readable.
+
+## Live Coding Examples
+
+```{r}
+library(dplyr)
+
+students %>%
+  filter(score > 80)
+
+students %>%
+  select(name, score)
+
+students %>%
+  mutate(pass = score >= 50)
+
+students %>%
+  arrange(score)
+```
+
+## Practice Exercises
+
+1. Filter students with score greater than 85.
+2. Select only `name` and `score`.
+3. Create a new variable called `pass`.
+4. Arrange the data by score from lowest to highest.
+
+## Assignment
+
+Use `dplyr` to clean and summarize a small dataset.
+
+# Week 8: Grouping and Summarising Data
+
+## Objectives
+
+- Use `group_by()` and `summarise()`
+- Compute grouped statistics
+- Compare categories
+
+## Lecture Notes
+
+Grouping is useful when we want summaries by category, such as average scores by group.
+
+## Live Coding Examples
+
+```{r}
+students2 <- data.frame(
+  name = c("Alice", "Bob", "Chidi", "Dana", "Eva", "Farah"),
+  group = c("A", "A", "B", "B", "A", "B"),
+  score = c(85, 90, 78, 92, 88, 81)
+)
+
+students2 %>%
+  group_by(group) %>%
+  summarise(
+    avg_score = mean(score),
+    max_score = max(score),
+    n = n()
+  )
+```
+
+## Practice Exercises
+
+1. Group data by one variable.
+2. Compute average score by group.
+3. Count how many students are in each group.
+
+## Assignment
+
+Using a grouped dataset, calculate summary statistics and interpret the results in words.
+
+# Week 9: Data Visualization with ggplot2
+
+## Objectives
+
+- Understand the grammar of graphics
+- Create histograms, scatterplots, and bar charts
+- Label plots clearly
+
+## Lecture Notes
+
+Good visualizations help communicate results clearly.
+
+## Live Coding Examples
+
+```{r}
+library(ggplot2)
+
+ggplot(students, aes(x = score)) +
+  geom_histogram(binwidth = 5)
+```
+
+```{r}
+ggplot(students, aes(x = age, y = score)) +
+  geom_point()
+```
+
+```{r}
+ggplot(students, aes(x = name, y = score)) +
+  geom_col()
+```
+
+## Practice Exercises
+
+1. Create a histogram of scores.
+2. Create a scatterplot of age vs score.
+3. Create a bar chart of names and scores.
+
+## Assignment
+
+Create 3 plots from a dataset and write 2--3 sentences interpreting each one.
+
+# Week 10: Improving Plots
+
+## Objectives
+
+- Customize titles and labels
+- Use themes
+- Create faceted plots
+- Improve readability
+
+## Lecture Notes
+
+Students should learn that a good plot is not only correct but also clear and visually effective.
+
+## Live Coding Examples
+
+```{r}
+ggplot(students2, aes(x = group, y = score)) +
+  geom_boxplot() +
+  labs(
+    title = "Scores by Group",
+    x = "Group",
+    y = "Score"
+  )
+```
+
+```{r}
+ggplot(students2, aes(x = score)) +
+  geom_histogram(binwidth = 5) +
+  facet_wrap(~ group)
+```
+
+## Practice Exercises
+
+1. Add a title and axis labels to a plot.
+2. Create a boxplot by group.
+3. Create a faceted histogram.
+
+## Assignment
+
+Redesign a basic plot to make it publication-ready for a class audience.
+
+# Week 11: Iteration and Repetition
+
+## Objectives
+
+- Review loops
+- Introduce the `apply` family
+- Practice repeated operations
+
+## Lecture Notes
+
+Iteration is useful when we need to repeat the same process many times.
+
+## Live Coding Examples
+
+```{r}
+for (i in 1:5) {
+  print(i^2)
+}
+```
+
+```{r}
+mat <- matrix(1:9, nrow = 3)
+mat
+
+apply(mat, 2, sum)
+apply(mat, 1, mean)
+```
+
+## Practice Exercises
+
+1. Use a loop to print the squares of numbers 1 to 10.
+2. Create a matrix and compute column sums.
+3. Use `apply()` to compute row means.
+
+## Assignment
+
+Compare solving a repeated task using a loop and using `apply()`.
+
+# Week 12: Introduction to Statistical Modelling
+
+## Objectives
+
+- Fit a simple linear regression model
+- Interpret model output
+- Connect data analysis and modelling
+
+## Lecture Notes
+
+A linear model studies the relationship between a response variable and one or more predictors.
+
+## Live Coding Examples
+
+```{r}
+study_data <- data.frame(
+  study_hours = c(2, 3, 4, 5, 6, 7, 8),
+  score = c(55, 60, 65, 70, 74, 80, 85)
+)
+
+model <- lm(score ~ study_hours, data = study_data)
+summary(model)
+```
+
+```{r}
+plot(study_data$study_hours, study_data$score)
+abline(model)
+```
+
+## Practice Exercises
+
+1. Fit a simple linear model.
+2. Identify the slope and intercept.
+3. Explain what the slope means in context.
+
+## Assignment
+
+Fit a linear model to a small dataset and explain the meaning of the results in plain language.
+
+# Assessment Structure
+
+## Suggested Breakdown
+
+- Weekly exercises: 20%
+- Lab participation: 10%
+- Midterm coding task: 20%
+- Final project: 30%
+- Final quiz or test: 20%
+
+# Final Project
+
+Students should complete a small end-of-course project where they:
+
+1. Import a dataset
+2. Explore and clean the data
+3. Compute summary statistics
+4. Create at least 2 useful plots
+5. Fit one simple model or perform one structured analysis
+6. Write a short interpretation of their findings
+
+# Differentiation for Mixed-Ability Students
+
+## Support for Beginners
+
+- Step-by-step worksheets
+- Guided examples
+- Small group coding practice
+- Glossary of basic terms
+
+## Extension for More Experienced Students
+
+- Challenge exercises each week
+- Open-ended mini projects
+- Optional use of additional packages
+- Function-writing and data-cleaning extensions
+
+# Bonus Unit: Introduction to R Markdown
+
+## Objectives
+
+- Understand reproducible reports
+- Combine text, code, and output in one document
+- Knit a simple report
+
+## Example
+
+```{r eval=FALSE}
+---
+title: "My First Report"
+output: html_document
+---
+
+# Introduction
+
+This is my first R Markdown document.
+
+```{r}
+x <- 1:10
+mean(x)
+```
+```
+
+# Suggested Datasets
+
+You may use:
+- Student performance data
+- Sales data
+- Weather data
+- Sports statistics
+- Health or survey data
+
+# Closing Note
+
+This course pack is designed to move students from beginner to intermediate level in a structured and supportive way. It can be adapted for a semester course, a bootcamp, or a workshop series.

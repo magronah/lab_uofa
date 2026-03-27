@@ -1,0 +1,25 @@
+---
+title: "November7 meeting"
+output: html_document
+date: "2025-11-07"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Abstract 
+- Background - multiple methods used in identifying 
+
+- The problem - differences in tools that are used to find 
+
+- Finding 
+
+## Introduction 
+- General overview of the research area
+
+- The Gap leading to the research question being answered 
+
+- The research question itself
+
+- What the paper will do to answer the research question 

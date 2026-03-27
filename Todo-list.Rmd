@@ -1,0 +1,54 @@
+---
+title: "Task to do"
+output: html_document
+date: "2025-11-07"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Next Meeting 
+
+[Study the paper by Jacob Nearing (link here)](https://www.nature.com/articles/s41467-022-28034-z)
+
+What to look out for while reading this paper:
+
+
+## Abstract 
+
+- Background 
+
+- The problem and method used to solve the research question
+
+- Finding 
+
+## Introduction 
+
+- General overview of the research area
+
+- The Gap leading to the research question being answered
+
+- The research question itself
+
+- What the paper will do to answer the research question 
+
+
+## Method 
+
+
+
+## Results and Discussions 
+
+
+
+## Conclusion 
+
+
+
+
+
+
+
+
+
