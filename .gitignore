@@ -12,6 +12,5 @@ Hackathon/
 *.sum
 *.fasta
 *.tsv
-*.csv
 *.qza
 *.html
